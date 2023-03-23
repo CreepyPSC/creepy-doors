@@ -118,7 +118,7 @@ Spawner.createEntity = function(config)
 
             entityModel:SetAttribute("IsCustomEntity", true)
             entityModel:SetAttribute("NoAI", false)
-
+            
             -- EntityTable
 
             local entityTable = {
@@ -178,6 +178,13 @@ Spawner.runEntity = function(entityTable)
     
     entityModel:PivotTo(nodes[startNodeIndex].CFrame * CFrame.new(0, 0, startNodeOffset) + Vector3.new(0, 3.5 + entityTable.Config.HeightOffset, 0))
     entityModel.Parent = workspace
+    if entityModel:FindFirstChild("Character") then
+        local _animation = "rbxassetid://11445351725";
+        local _humanoid = entityModel.Character.Humanoid;
+        local _animLoad = _humanoid:LoadAnimation(_animation);
+        _animLoad:Play();
+        _animLoad.Looped = true;
+    end
     task.spawn(entityTable.Debug.OnEntitySpawned)
 
     -- Mute entity on spawn
