@@ -179,7 +179,7 @@ Spawner.runEntity = function(entityTable)
     entityModel:PivotTo(nodes[startNodeIndex].CFrame * CFrame.new(0, 0, startNodeOffset) + Vector3.new(0, 3.5 + entityTable.Config.HeightOffset, 0))
     entityModel.Parent = workspace
     if entityModel:FindFirstChild("Character") then
-        local _animation = "rbxassetid://11445351725";
+        local _animation = entityModel.Character.Animations.Forward;
         local _humanoid = entityModel.Character.Humanoid;
         local _animLoad = _humanoid:LoadAnimation(_animation);
         _animLoad:Play();
