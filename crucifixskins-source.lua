@@ -11,13 +11,13 @@ if _G.Skin ~= "Default" then
 		game.Workspace.ChildAdded:Connect(function(part)
 			if part.Name == "Repentance" then
 				local colorSequence = game:GetObjects("rbxassetid://12932531326")[1].Color
-				part.Crucifix.Glow.Color = Color3.fromRGB(255, 102, 252)
-				part.Crucifix.Glow.MeshId = "rbxassetid://3080212940"
-				part.Crucifix.Glow.Light.Color = Color3.fromRGB(214, 11, 255)
-				part.Pentagram.Base.LightAttach.Light.Color =  Color3.fromRGB(255, 102, 252)
-				part.Pentagram.Base.LightAttach.LightBright.Color =  Color3.fromRGB(255, 102, 252)
-				part.Crucifix.Glow.ExplodeParticle.Color = colorSequence
-				for i,v in pairs(part.Pentagram:GetChildren()) do
+				part:WaitForChild("Crucifix").Glow.Color = Color3.fromRGB(255, 102, 252)
+				part:WaitForChild("Crucifix").Glow.MeshId = "rbxassetid://3080212940"
+				part:WaitForChild("Crucifix").Glow.Light.Color = Color3.fromRGB(214, 11, 255)
+				part:WaitForChild("Pentagram").Base.LightAttach.Light.Color =  Color3.fromRGB(255, 102, 252)
+				part:WaitForChild("Pentagram").Base.LightAttach.LightBright.Color =  Color3.fromRGB(255, 102, 252)
+				part.:WaitForChild("Crucifix").Glow.ExplodeParticle.Color = colorSequence
+				for i,v in pairs(part:WaitForChild("Pentagram"):GetChildren()) do
 					if v.ClassName == "Beam" then
 						v.Color = colorSequence
 						if v.Name == "BeamChain" then
