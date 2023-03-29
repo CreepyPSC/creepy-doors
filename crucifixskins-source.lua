@@ -16,7 +16,7 @@ if _G.Skin ~= "Default" then
 				part:WaitForChild("Crucifix").Glow.Light.Color = Color3.fromRGB(214, 11, 255)
 				part:WaitForChild("Pentagram").Base.LightAttach.Light.Color =  Color3.fromRGB(255, 102, 252)
 				part:WaitForChild("Pentagram").Base.LightAttach.LightBright.Color =  Color3.fromRGB(255, 102, 252)
-				part.:WaitForChild("Crucifix").Glow.ExplodeParticle.Color = colorSequence
+				part:WaitForChild("Crucifix").Glow.ExplodeParticle.Color = colorSequence
 				for i,v in pairs(part:WaitForChild("Pentagram"):GetChildren()) do
 					if v.ClassName == "Beam" then
 						v.Color = colorSequence
