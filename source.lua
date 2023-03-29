@@ -118,7 +118,7 @@ Spawner.createEntity = function(config)
 
             entityModel:SetAttribute("IsCustomEntity", true)
             entityModel:SetAttribute("NoAI", false)
-            
+
             -- EntityTable
 
             local entityTable = {
