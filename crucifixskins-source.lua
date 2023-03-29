@@ -1,7 +1,7 @@
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 mouse.KeyDown:connect(function(key)
- if key == _G.ActivationKey then
+ if key == _G.ActivationKey and _G.OnlySkins ~= true then
 	game.Players.LocalPlayer.Character:SetAttribute("Hiding", true)
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/PenguinManiack/Crucifix/main/Crucifix.lua'))()
  end
