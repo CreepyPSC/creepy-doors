@@ -1,0 +1,34 @@
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+mouse.KeyDown:connect(function(key)
+ if key == _G.ActivationKey then
+	game.Players.LocalPlayer.Character:SetAttribute("Hiding", true)
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/PenguinManiack/Crucifix/main/Crucifix.lua'))()
+ end
+end)
+if _G.Skin ~= "Default" then
+	if _G.Skin == "Love" then
+		game.Workspace.ChildAdded:Connect(function(part)
+			if part.Name == "Repentance" then
+				local colorSequence = game:GetObjects("rbxassetid://12932531326")[1].Color
+				part.Crucifix.Glow.Color = Color3.fromRGB(255, 102, 252)
+				part.Crucifix.Glow.MeshId = "rbxassetid://3080212940"
+				part.Crucifix.Glow.Light.Color = Color3.fromRGB(214, 11, 255)
+				part.Pentagram.Base.LightAttach.Light.Color =  Color3.fromRGB(255, 102, 252)
+				part.Pentagram.Base.LightAttach.LightBright.Color =  Color3.fromRGB(255, 102, 252)
+				part.Crucifix.Glow.ExplodeParticle.Color = colorSequence
+				for i,v in pairs(part.Pentagram:GetChildren()) do
+					if v.ClassName == "Beam" then
+						v.Color = colorSequence
+						if v.Name == "BeamChain" then
+							v.Texture = "rbxassetid://241778280"
+						end
+						if v.Name == "BeamFlat" and v.Texture == "rbxassetid://11523868403" then
+							v.Texture = "rbxassetid://12323570774"
+						end
+					end
+				end
+			end
+		end)
+	end
+end
